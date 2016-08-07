@@ -1,5 +1,5 @@
-# docker-xp
-[![Build Status](https://travis-ci.org/adamkingit/docker-xp.svg?branch=master)](https://travis-ci.org/adamkingit/docker-xp)
+# docker-xp [![Build Status](https://travis-ci.org/adamkingit/docker-xp.svg?branch=master)](https://travis-ci.org/adamkingit/docker-xp)
+
 This project contains build scripts for Docker images (Dockerfiles) and Docker related utilities.
 
 In this project you can find build scripts for Docker images (Dockerfiles) and Docker related utilities
