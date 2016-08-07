@@ -9,6 +9,8 @@
 #                                                                              #
 ################################################################################
 
+mkdir ./logs
+
 while read -r imageName buildContextDirectory
 do
   ./tools/build.sh $imageName $buildContextDirectory
