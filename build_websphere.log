@@ -1,47 +1,0 @@
-Sending build context to Docker daemon 3.584 kB
-Step 1 : FROM java:8-jdk-alpine
- ---> f1da3c7976d0
-Step 2 : MAINTAINER Adam King <rak@linux.vnet.ibm.com>
- ---> Running in f1bb5cd7c07e
- ---> d0c226f95420
-Removing intermediate container f1bb5cd7c07e
-Step 3 : RUN apk add --update curl
- ---> Running in daaed0824a5e
-fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/main/x86_64/APKINDEX.tar.gz
-fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/community/x86_64/APKINDEX.tar.gz
-(1/3) Installing libssh2 (1.7.0-r0)
-(2/3) Installing libcurl (7.50.1-r0)
-(3/3) Installing curl (7.50.1-r0)
-Executing busybox-1.24.2-r9.trigger
-OK: 141 MiB in 38 packages
- ---> 526d43517072
-Removing intermediate container daaed0824a5e
-Step 4 : RUN mkdir -p /tmp/appdata/var/plugins/command/stage
- ---> Running in 7f2e3f276819
- ---> a43778ebdfda
-Removing intermediate container 7f2e3f276819
-Step 5 : RUN curl --output /tmp/appdata/var/plugins/command/stage/FileUtils-49.796720.zip "https://public.dhe.ibm.com/software/products/UrbanCode/plugins/ibmucd/FileUtils/FileUtils-49.796720.zip"     && curl --output /tmp/appdata/var/plugins/command/stage/MCWASPlugin-11.150506.zip "https://public.dhe.ibm.com/software/products/UrbanCode/plugins/ibmucd/IBMMiddlewareConfigurationForWebSphere/MCWASPlugin-11.150506.zip"     && curl --output /tmp/appdata/var/plugins/command/stage/WAS-Configure-38.810352.zip "http://public.dhe.ibm.com/software/products/UrbanCode/plugins/ibmucd/WebSphereConfiguration/WAS-Configure-38.810352.zip"     && curl --output /tmp/appdata/var/plugins/command/stage/WebSphereLiberty-8.802646.zip "https://public.dhe.ibm.com/software/products/UrbanCode/plugins/ibmucd/WebSphereLiberty/WebSphereLiberty-8.802646.zip"
- ---> Running in 5fbfef065399
-[91m  [0m[91m% [0m[91mTo[0m[91mta[0m[91ml [0m[91m  [0m[91m %[0m[91m R[0m[91mec[0m[91mei[0m[91mve[0m[91md [0m[91m% [0m[91mXf[0m[91mer[0m[91md [0m[91m A[0m[91mve[0m[91mra[0m[91mge[0m[91m S[0m[91mpe[0m[91med[0m[91m  [0m[91m T[0m[91mim[0m[91me [0m[91m  [0m[91m T[0m[91mim[0m[91me [0m[91m  [0m[91m  [0m[91mTime  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0  [0m[91m   0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m [0m[91m 1[0m[91m 4[0m[91m67[0m[91m5k[0m[91m  [0m[91m  [0m[91m1 [0m[91m49[0m[91m15[0m[91m2 [0m[91m  [0m[91m 0     0  92673     [0m[91m 0  0:00:51 --:--:--  0:00:51  103k[0m[91m [0m[91m50[0m[91m 4[0m[91m67[0m[91m5k[0m[91m  [0m[91m 5[0m[91m0 [0m[91m23[0m[91m84[0m[91mk [0m[91m  [0m[91m 0[0m[91m  [0m[91m  [0m[91m 0[0m[91m  [0m[91m15[0m[91m76[0m[91mk [0m[91m     0  0:00:02  0:0[0m[91m0:01  0:00:01 1649k[0m[91m1[0m[91m00[0m[91m 4[0m[91m67[0m[91m5k[0m[91m  [0m[91m10[0m[91m0 [0m[91m46[0m[91m75k    0     0  2108k      0  0:00:02  0:00:02 --:--:-- 2175k
-[0m[91m  [0m[91m% [0m[91mTo[0m[91mta[0m[91ml [0m[91m  [0m[91m %[0m[91m R[0m[91mec[0m[91mei[0m[91mve[0m[91md [0m[91m% [0m[91mXf[0m[91mer[0m[91md [0m[91m A[0m[91mve[0m[91mrage Speed   Time    Time     Time  Current
-       [0m[91m                          Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0   [0m[91m   0 --:--:-- --:--:-- --:--:--     0[0m[91m [0m[91m 2[0m[91m 3[0m[91m0.[0m[91m8M[0m[91m  [0m[91m  [0m[91m2 [0m[91m 8[0m[91m48[0m[91mk [0m[91m  [0m[91m 0[0m[91m  [0m[91m  [0m[91m 0[0m[91m  [0m[91m 6[0m[91m49[0m[91mk [0m[91m  [0m[91m  [0m[91m 0[0m[91m  [0m[91m0:[0m[91m00[0m[91m:4[0m[91m8 [0m[91m 0[0m[91m:0[0m[91m0:[0m[91m01[0m[91m  [0m[91m0:[0m[91m00[0m[91m:4[0m[91m7 [0m[91m 8[0m[91m48k[0m[91m [0m[91m13[0m[91m 3[0m[91m0.[0m[91m8M[0m[91m  [0m[91m 1[0m[91m3 [0m[91m41[0m[91m20[0m[91mk [0m[91m  [0m[91m 0     0  1802k      0  0:00:17  0:00:02  0:00:15 2078k[0m[91m [0m[91m2[0m[91m2 30.8M   22 7256k    0     0  2215k      0  0:00:14  0:00:03  0:00:11 2442k[0m[91m [0m[91m33[0m[91m 3[0m[91m0.8M   33 10.3M    0     0  2470k      0  0[0m[91m:[0m[91m00[0m[91m:1[0m[91m2 [0m[91m 0[0m[91m:0[0m[91m0:[0m[91m04[0m[91m  [0m[91m0:00:08 2659k[0m[91m [0m[91m43[0m[91m 3[0m[91m0.[0m[91m8M[0m[91m  [0m[91m 43 13.5M    0     0  2622k      0  0:00:12  0:00[0m[91m:0[0m[91m5 [0m[91m 0[0m[91m:0[0m[91m0:07 2783k[0m[91m [0m[91m54[0m[91m 3[0m[91m0.[0m[91m8M[0m[91m  [0m[91m 5[0m[91m4 [0m[91m16[0m[91m.7[0m[91mM [0m[91m  [0m[91m 0[0m[91m  [0m[91m  [0m[91m 0[0m[91m  [0m[91m2730k[0m[91m      0  0:00:11  0:00:06  0:00[0m[91m:05 3277k[0m[91m [0m[91m64[0m[91m 3[0m[91m0.[0m[91m8M[0m[91m  [0m[91m 6[0m[91m4 [0m[91m19[0m[91m.8[0m[91mM [0m[91m  [0m[91m 0[0m[91m  [0m[91m  [0m[91m 0[0m[91m  [0m[91m27[0m[91m95[0m[91mk [0m[91m  [0m[91m  [0m[91m 0[0m[91m  [0m[91m0:[0m[91m00[0m[91m:1[0m[91m1 [0m[91m 0[0m[91m:0[0m[91m0:[0m[91m07[0m[91m  [0m[91m0:00:04 3249k[0m[91m [0m[91m74[0m[91m 3[0m[91m0.[0m[91m8M[0m[91m  [0m[91m 7[0m[91m4 [0m[91m23[0m[91m.1[0m[91mM [0m[91m  [0m[91m 0[0m[91m  [0m[91m  [0m[91m 0[0m[91m  [0m[91m2856k      0  0:00:11  0:00:08  0:00:03 3275k[0m[91m [0m[91m85[0m[91m 3[0m[91m0.[0m[91m8M[0m[91m  [0m[91m 85 26.2M    [0m[91m0     0  2899k      0  0:00:10  0:00:09  0:00:01 3267k[0m[91m [0m[91m95[0m[91m 3[0m[91m0.[0m[91m8M[0m[91m  [0m[91m 9[0m[91m5 [0m[91m29[0m[91m.4[0m[91mM [0m[91m  [0m[91m 0[0m[91m  [0m[91m   0  2926k      0  0:0[0m[91m0:10  0:00:10 --:--:-- 3246k[0m[91m1[0m[91m00[0m[91m 3[0m[91m0.[0m[91m8M[0m[91m  [0m[91m10[0m[91m0 [0m[91m30[0m[91m.8[0m[91mM [0m[91m  [0m[91m 0     0  2946k[0m[91m      0  0:00[0m[91m:10  0:00:10 --:--:-- 3251k
-[0m[91m  [0m[91m% [0m[91mTo[0m[91mta[0m[91ml [0m[91m  [0m[91m %[0m[91m R[0m[91mec[0m[91mei[0m[91mve[0m[91md [0m[91m% [0m[91mXf[0m[91mer[0m[91md [0m[91m Average Spe[0m[91med   Time    Time     Time  Current
-                                 Dload  Upload   Total   S[0m[91mpent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m [0m[91m 0[0m[91m 3[0m[91m59[0m[91m5k[0m[91m  [0m[91m  0 28080    0[0m[91m     0  51074      0  0:01:12 --:--:--  0:01:12 97162[0m[91m [0m[91m73[0m[91m 3[0m[91m59[0m[91m5k   73 [0m[91m2627k    0     0  1672k      0  0:00:02  0:00:01  0:00:01 2005k[0m[91m1[0m[91m00[0m[91m 3[0m[91m59[0m[91m5k[0m[91m  [0m[91m10[0m[91m0 [0m[91m3595k    0     0  1982k      [0m[91m0  0:00:01  0:00:01 --:--:-- 2316k
-[0m[91m  [0m[91m% [0m[91mTo[0m[91mta[0m[91ml [0m[91m  [0m[91m %[0m[91m R[0m[91mec[0m[91mei[0m[91mve[0m[91md [0m[91m% [0m[91mXf[0m[91mer[0m[91md [0m[91m A[0m[91mve[0m[91mra[0m[91mge[0m[91m S[0m[91mpe[0m[91med[0m[91m  [0m[91m T[0m[91mim[0m[91me [0m[91m  [0m[91m T[0m[91mim[0m[91me [0m[91m  [0m[91m  [0m[91mTi[0m[91mme[0m[91m  [0m[91mCu[0m[91mrr[0m[91men[0m[91mt
-                                [0m[91m Dload  Upload   Total[0m[91m   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 -[0m[91m-:--:-- --:--:-- --:--:--     0[0m[91m [0m[91m27[0m[91m  [0m[91m76[0m[91m9k[0m[91m  [0m[91m 2[0m[91m7 [0m[91m 2[0m[91m08[0m[91mk [0m[91m  [0m[91m 0[0m[91m  [0m[91m  [0m[91m 0   293k      0  0:[0m[91m00:02 --:--:--  0:00:02  300k[0m[91m1[0m[91m00[0m[91m  [0m[91m76[0m[91m9k[0m[91m  [0m[91m10[0m[91m0 [0m[91m 7[0m[91m69[0m[91mk [0m[91m  [0m[91m 0[0m[91m  [0m[91m  [0m[91m 0[0m[91m  [0m[91m 7[0m[91m12[0m[91mk      0  0:00:01  0:00:01 --:--:--  725k
-[0m ---> fb76eab2b2d5
-Removing intermediate container 5fbfef065399
-Step 6 : EXPOSE 8080 8443 7918
- ---> Running in 6ec2c987b7f7
- ---> ebf8f97b5507
-Removing intermediate container 6ec2c987b7f7
-Step 7 : CMD ./bin/server run
- ---> Running in 75e6e51bab4c
- ---> 7417ab74e93c
-Removing intermediate container 75e6e51bab4c
-Successfully built 7417ab74e93c
