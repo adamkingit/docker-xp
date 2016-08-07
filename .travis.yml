@@ -6,4 +6,4 @@ services:
   - docker
 
 script:
-- buildAll.sh
+- bash  buildAll.sh
